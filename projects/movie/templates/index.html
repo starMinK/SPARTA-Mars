@@ -98,7 +98,32 @@
                 url: '/movie',
                 data: {},
                 success: function (response) {
-                    alert(response['msg'])
+                    let rows = response['movies']
+                    for(let i = 0; i < rows.length; i++){
+                        let comment = rows[i]['comment']
+                        let desc = rows[i]['desc']
+                        let image = rows[i]['image']
+                        let star = rows[i]['star']
+                        let title = rows[i]['title']
+
+                        let star_image = "⭐".repeat(star)
+
+                        let tempHtml = `<div class="col">
+                                            <div class="card h-100">
+                                                <img src="${image}"
+                                                     class="card-img-top">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${title}</h5>
+                                                    <p class="card-text">${desc}</p>
+                                                    <p>${star_image}</p>
+                                                    <p class="mycomment">${comment}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                        `
+
+                        $('#cards-box').append(tempHtml)
+                    }
                 }
             })
         }
@@ -161,54 +186,6 @@
 </div>
 <div class="mycards">
     <div class="row row-cols-1 row-cols-md-4 g-4" id="cards-box">
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                     class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">영화 제목이 들어갑니다</h5>
-                    <p class="card-text">여기에 영화에 대한 설명이 들어갑니다.</p>
-                    <p>⭐⭐⭐</p>
-                    <p class="mycomment">나의 한줄 평을 씁니다</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                     class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">영화 제목이 들어갑니다</h5>
-                    <p class="card-text">여기에 영화에 대한 설명이 들어갑니다.</p>
-                    <p>⭐⭐⭐</p>
-                    <p class="mycomment">나의 한줄 평을 씁니다</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                     class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">영화 제목이 들어갑니다</h5>
-                    <p class="card-text">여기에 영화에 대한 설명이 들어갑니다.</p>
-                    <p>⭐⭐⭐</p>
-                    <p class="mycomment">나의 한줄 평을 씁니다</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                     class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">영화 제목이 들어갑니다</h5>
-                    <p class="card-text">여기에 영화에 대한 설명이 들어갑니다.</p>
-                    <p>⭐⭐⭐</p>
-                    <p class="mycomment">나의 한줄 평을 씁니다</p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 </body>
