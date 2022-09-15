@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/pythonprac/venv" />
       <excludeFolder url="file://$MODULE_DIR$/projects/mars/venv" />
       <excludeFolder url="file://$MODULE_DIR$/projects/homework/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/bucket/venv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
